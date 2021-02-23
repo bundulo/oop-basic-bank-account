@@ -58,7 +58,7 @@ public class BankAccount {
         }
     }
 
-    public void withdrawFunds(int amount){
+    public void withdrawFunds(double amount){
         if (amount <= 0){
             System.out.println("You can't withdraw lesser amount than 1 HUF");
         }
