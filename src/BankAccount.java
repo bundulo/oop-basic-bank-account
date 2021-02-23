@@ -62,7 +62,10 @@ public class BankAccount {
         if (amount <= 0){
             System.out.println("You can't withdraw lesser amount than 1 HUF");
         }
-        if (amount > 0){
+        if (balance < amount){
+            System.out.println("lack of coverage \n Your current balance: " + balance);
+        }
+        if (amount > 0 && balance > amount){
             this.balance -= amount;
             System.out.println("You successfully withdraw " + amount + " HUF to your balance \n Your current Balance is " + balance + " HUF");
 
