@@ -1,25 +1,25 @@
 public class BankAccount {
 
-    private int bankAccountNumber;
-    private int balance;
+    private int number;
+    private double balance;
     private String customerName;
     private String email;
     private String phoneNumber; //?
 
 
-    public int getBankAccountNumber() {
-        return bankAccountNumber;
+    public int getNumber() {
+        return number;
     }
 
-    public void setBankAccountNumber(int bankAccountNumber) {
-        this.bankAccountNumber = bankAccountNumber;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -47,15 +47,25 @@ public class BankAccount {
         this.phoneNumber = phoneNumber;
     }
 
-    public void depositFunds(int amount){
+    public void depositFunds(double amount){
+        if (amount <= 0){
+            System.out.println("You can't deposit lesser amount than 1 HUF");
+        }
         if (amount > 0){
             this.balance += amount;
+            System.out.println("You successfully added " + amount + " HUF to your balance \n Your current Balance is " + balance + " HUF");
+
         }
     }
 
     public void withdrawFunds(int amount){
+        if (amount <= 0){
+            System.out.println("You can't withdraw lesser amount than 1 HUF");
+        }
         if (amount > 0){
             this.balance -= amount;
+            System.out.println("You successfully withdraw " + amount + " HUF to your balance \n Your current Balance is " + balance + " HUF");
+
         }
     }
 
